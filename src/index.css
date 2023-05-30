@@ -11,18 +11,31 @@
 }
 
 
-/* css loader generated using https://10015.io/tools/css-loader-generator */
 .spinner {
-   margin: 40px;
-   width: 11.2px;
-   height: 11.2px;
-   animation: spinner-z355kx 1s infinite linear;
-   border-radius: 11.2px;
-   box-shadow: 28px 0px 0 0 #fff, 17.4px 21.8px 0 0 #fff, -6.2px 27.2px 0 0 #fff, -25.2px 12px 0 0 #fff, -25.2px -12px 0 0 #fff, -6.2px -27.2px 0 0 #fff, 17.4px -21.8px 0 0 #fff;
+   width: 56px;
+   height: 56px;
+   display: grid;
+   animation: spinner-plncf9 4s infinite;
 }
 
-@keyframes spinner-z355kx {
-   to {
-      transform: rotate(360deg);
+.spinner::before,
+.spinner::after {
+   content: "";
+   grid-area: 1/1;
+   border: 9px solid;
+   border-radius: 50%;
+   border-color: #474bff #474bff #0000 #0000;
+   mix-blend-mode: darken;
+   animation: spinner-plncf9 1s infinite linear;
+}
+
+.spinner::after {
+   border-color: #0000 #0000 #dbdcef #dbdcef;
+   animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+   100% {
+      transform: rotate(1turn);
    }
 }
